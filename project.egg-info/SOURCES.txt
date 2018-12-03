@@ -5,8 +5,10 @@ luapps/middlewares.py
 luapps/pipelines.py
 luapps/settings.py
 luapps/spiders/__init__.py
+luapps/spiders/dining_rathbone_spider.py
 luapps/spiders/dining_spider.py
 luapps/spiders/gym_spider.py
+luapps/spiders/library_spider.py
 project.egg-info/PKG-INFO
 project.egg-info/SOURCES.txt
 project.egg-info/dependency_links.txt

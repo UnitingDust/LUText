@@ -3,9 +3,9 @@ import re
 import json
 
 class DiningSpider(scrapy.Spider):
-	name = "dining_lower"
+	name = "dining_rathbone"
 	start_urls = [
-		'https://menus.sodexomyway.com/BiteMenu/Menu?menuId=1344&locationId=97451001&whereami=http://lehigh.sodexomyway.com/dining-near-me/resident-dining'
+		'https://menus.sodexomyway.com/BiteMenu/Menu?menuId=394&locationId=97451005&whereami=http://lehigh.sodexomyway.com/dining-near-me/rathbone'
 	]
 
 	def parse(self, response):
@@ -24,11 +24,11 @@ class DiningSpider(scrapy.Spider):
 			for meal in meals:
 				outp[days[i]][meal] = []
 			for food in menuItems:
-				if food["meal"] == "Breakfast":
+				if food["meal"] == "Breakfast Diner":
 					outp[days[i]]["Breakfast"].append(food["formalName"])
 				if food["meal"] == "Lunch":
 					outp[days[i]]["Lunch"].append(food["formalName"])
-				if food["meal"] == "DINNER":
+				if food["meal"] == "Dinner":
 					outp[days[i]]["Dinner"].append(food["formalName"])
 
 		if outp:

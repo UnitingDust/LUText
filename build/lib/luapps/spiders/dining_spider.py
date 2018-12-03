@@ -3,7 +3,7 @@ import re
 import json
 
 class DiningSpider(scrapy.Spider):
-	name = "dining"
+	name = "dining_lower"
 	start_urls = [
 		'https://menus.sodexomyway.com/BiteMenu/Menu?menuId=1344&locationId=97451001&whereami=http://lehigh.sodexomyway.com/dining-near-me/resident-dining'
 	]
@@ -33,12 +33,3 @@ class DiningSpider(scrapy.Spider):
 
 		if outp:
 			yield outp
-		# for row in response.css('table tbody tr'):
-		# 	data = {}
-		# 	data['dates'] = row.css('td:nth-child(1)::text').extract_first()
-		# 	data['day'] = row.css('td:nth-child(2)::text').extract_first()
-		# 	# data['hours'] = row.css('td:nth-child(3)::text').extract_first()
-		# 	data['hours'] = ''.join(row.xpath(".//td[3]//text()").extract())
-		# 	if not data['dates']:
-		# 		continue
-		# 	yield data
